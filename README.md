@@ -1,7 +1,8 @@
 urldata
 =======
 Library to extract url data from css property
-
+=======
+[![Build Status](https://travis-ci.org/lexich/urldata.svg)](https://travis-ci.org/lexich/urldata)
 ### Instalation
 
 ```
