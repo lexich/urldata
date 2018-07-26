@@ -49,7 +49,7 @@ describe("urldata", function(){
     ["images/test.png\""].should.eql(
       urldata("url(images/test.png\")")
     );
-    ["\' images/test.png"].should.eql(
+    [].should.eql(
       urldata("url( \' images/test.png)")
     );
   });

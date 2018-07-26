@@ -38,11 +38,13 @@ function urldata(value){
         end = value.indexOf(")", start);
     } else {
         end = start;
-        while(value[end] !== openQuote) { end++; }
-        while(value[end] !== ")"){ end++; }
+        while(value[end] !== openQuote && end < value.length) { end++; }
+        while(value[end] !== ")" && end < value.length){ end++; }
     }
     
     if(end < 0){
+      return result;
+    } else if (end === value.length) {
       return result;
     }
     end--;
