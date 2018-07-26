@@ -40,6 +40,11 @@ describe("urldata", function(){
       urldata("url(\"images/test.png\")")
     );
   });
+  it("check urldata with parentheses", function(){
+    ["(images/test.png)"].should.eql(
+      urldata("url(\"(images/test.png)\")")
+    );
+  });
   it("check urldata with wrong data", function(){
     ["images/test.png\""].should.eql(
       urldata("url(images/test.png\")")
