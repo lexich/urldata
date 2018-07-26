@@ -34,8 +34,14 @@ function urldata(value){
       while(value[start] === " "){ start++; }
     }
 
-
-    end = value.indexOf(")", start);
+    if (!openQuote) {
+        end = value.indexOf(")", start);
+    } else {
+        end = start;
+        while(value[end] !== openQuote) { end++; }
+        while(value[end] !== ")"){ end++; }
+    }
+    
     if(end < 0){
       return result;
     }
@@ -55,4 +61,5 @@ function urldata(value){
   }
   return result;
 }
+
 module.exports = urldata;
