@@ -1,7 +1,8 @@
 /*global describe, it*/
 "use strict";
 var urldata = require("../"),
-    should = require("should");
+    should = require("should"),
+    { expect } = require("chai");
 
 describe("urldata", function(){
   it("check urldata simple url", function(){
@@ -46,6 +47,10 @@ describe("urldata", function(){
     );
   });
   it("check urldata with wrong data", function(){
+    expect(urldata("")).to.be.undefined;
+    [].should.eql(
+      urldata("url")
+    );
     ["images/test.png\""].should.eql(
       urldata("url(images/test.png\")")
     );
