@@ -2,7 +2,8 @@
 "use strict";
 var urldata = require("../"),
     should = require("should"),
-    { expect } = require("chai");
+    chai = require("chai"),
+    expect = chai.expect;
 
 describe("urldata", function(){
   it("check urldata simple url", function(){
