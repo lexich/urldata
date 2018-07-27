@@ -1,12 +1,13 @@
 {
   "name": "urldata",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Library to extract url data from css property",
   "main": "index.js",
   "repository": "lexich/urldata",
   "scripts": {
     "test": "istanbul test node_modules/mocha/bin/_mocha --report html -- test/*.js --reporter spec",
-    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly --report html -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly --report html -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "release": "standard-version && git push --follow-tags origin master --no-verify && npm publish"
   },
   "keywords": [
     "node",
@@ -25,6 +26,7 @@
     "istanbul": "^0.3.2",
     "mocha": "^2.0.0",
     "mocha-lcov-reporter": "0.0.1",
-    "should": "^4.1.0"
+    "should": "^4.1.0",
+    "standard-version": "^4.4.0"
   }
 }
