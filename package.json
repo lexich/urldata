@@ -1,6 +1,6 @@
 {
   "name": "urldata",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Library to extract url data from css property",
   "main": "index.js",
   "repository": "lexich/urldata",
