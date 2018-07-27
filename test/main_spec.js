@@ -1,7 +1,9 @@
 /*global describe, it*/
 "use strict";
 var urldata = require("../"),
-    should = require("should");
+    should = require("should"),
+    chai = require("chai"),
+    expect = chai.expect;
 
 describe("urldata", function(){
   it("check urldata simple url", function(){
@@ -40,11 +42,20 @@ describe("urldata", function(){
       urldata("url(\"images/test.png\")")
     );
   });
+  it("check urldata with parentheses", function(){
+    ["(images/test.png)"].should.eql(
+      urldata("url(\"(images/test.png)\")")
+    );
+  });
   it("check urldata with wrong data", function(){
+    expect(urldata("")).to.be.undefined;
+    [].should.eql(
+      urldata("url")
+    );
     ["images/test.png\""].should.eql(
       urldata("url(images/test.png\")")
     );
-    ["\' images/test.png"].should.eql(
+    [].should.eql(
       urldata("url( \' images/test.png)")
     );
   });
